@@ -1,5 +1,9 @@
-using my.bookshop as my from '../db/data-model';
+using fullstack_dev_challenge from '../db/data-model';
 
-service CatalogService {
-    @readonly entity Books as projection on my.Books;
+service DevChallengeService @(path: '/dev-challenge') {
+    @odata.draft.enabled: true
+    entity Tests     as projection on fullstack_dev_challenge.Tests;
+
+    @odata.draft.enabled: false
+    entity Questions as projection on fullstack_dev_challenge.Questions;
 }
