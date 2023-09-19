@@ -29,3 +29,5 @@ mta_archives/
 # IDEs
 # .vscode
 # .idea
+db.sqlite-shm
+db.sqlite-wal

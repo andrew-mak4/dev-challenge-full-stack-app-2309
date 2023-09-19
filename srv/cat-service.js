@@ -23,13 +23,13 @@ module.exports = async function () {
         const testID = req.params[0]?.ID
         if (questionsCount - unassignedQuestionsCount > 0) {
             assignQuestions(unassignedQuestions, testID, unassignedQuestionsCount)
-            const message = `There are not enough available questions. Only ${unassignedQuestionsCount} questions were assigned to the Test.`
+            const message = `Only ${unassignedQuestionsCount} question(s) added to the Test. There are not enough unassigned questions.`
             // req.info({ message })
             return message
         }
 
         assignQuestions(unassignedQuestions, testID, questionsCount)
-        const message = `${questionsCount} question(s) assigned to the Test.`
+        const message = `${questionsCount} question(s) successfully added to the Test.`
         // req.info({ message })
         return message
     });
