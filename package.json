@@ -10,9 +10,21 @@
     "express": "^4"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^1"
+    "@cap-js/sqlite": "^1.2.1"
   },
   "scripts": {
     "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "model": "*",
+        "schema_evolution": "auto",
+        "credentials": {
+          "url": "db.sqlite"
+        }
+      }
+    }
   }
 }
