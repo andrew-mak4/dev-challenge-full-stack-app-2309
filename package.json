@@ -10,10 +10,12 @@
     "express": "^4"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^1.2.1"
+    "@cap-js/sqlite": "^1.2.1",
+    "@sap/ux-specification": "^1.108.14"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-fullstack-dev-challenge": "cds watch --open fullstack-dev-challenge/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -26,5 +28,8 @@
         }
       }
     }
-  }
+  },
+  "sapux": [
+    "app/fullstack-dev-challenge"
+  ]
 }
