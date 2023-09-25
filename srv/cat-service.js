@@ -5,7 +5,7 @@ module.exports = async function () {
         const questionsCount = req.data.questionsCount
         if (questionsCount <= 0) {
             const message = `There is nothing to do. The number of questions to assign is ${questionsCount}.`
-            // req.warn({ message })
+            req.warn({ message })
             return message
         }
         const unassignedQuestionsQuery = SELECT`from fullstack_dev_challenge.Questions {
@@ -16,7 +16,7 @@ module.exports = async function () {
 
         if (!unassignedQuestions?.length) {
             const message = "There are no available questions for assignment."
-            // req.warn({ message })
+            req.warn({ message })
             return message
         }
 
@@ -24,13 +24,13 @@ module.exports = async function () {
         if (questionsCount - unassignedQuestionsCount > 0) {
             assignQuestions(unassignedQuestions, testID, unassignedQuestionsCount)
             const message = `Only ${unassignedQuestionsCount} question(s) added to the Test. There are not enough unassigned questions.`
-            // req.info({ message })
+            req.info({ message })
             return message
         }
 
         assignQuestions(unassignedQuestions, testID, questionsCount)
         const message = `${questionsCount} question(s) successfully added to the Test.`
-        // req.info({ message })
+        req.info({ message })
         return message
     });
 
