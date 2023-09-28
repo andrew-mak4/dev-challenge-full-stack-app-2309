@@ -46,12 +46,14 @@ annotate fullstack_dev_challenge.Tests with @(UI: {
     ]},
 });
 
-annotate fullstack_dev_challenge.Tests with @(UI.Identification: [{
-    $Type            : 'UI.DataFieldForAction',
-    Label            : 'Add Questions',
-    Action           : 'DevChallengeService.assignQuestionsToTest',
-    ![@UI.Importance]: #High
-}]);
+// annotate fullstack_dev_challenge.Tests with @(UI.Identification: [{
+//     $Type            : 'UI.DataFieldForAction',
+//     Label            : 'Add Questions',
+//     Action           : 'DevChallengeService.assignQuestionsToTest',
+//     ![@UI.Importance]: #High
+// }]);
+// No need any more to define a button for the custom action.
+// Instead it's used an extension for button on the web app side
 
 annotate fullstack_dev_challenge.Questions with @(UI: {
     PresentationVariant: {Visualizations: ['@UI.LineItem']},

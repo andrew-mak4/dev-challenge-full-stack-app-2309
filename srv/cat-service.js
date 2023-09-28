@@ -8,9 +8,8 @@ module.exports = async function () {
             req.warn({ message })
             return message
         }
-        const unassignedQuestionsQuery = SELECT`from fullstack_dev_challenge.Questions {
-            ID, test
-         } where test = null`
+
+        const unassignedQuestionsQuery = SELECT`from fullstack_dev_challenge.Questions {ID, test } where test = null`
         const unassignedQuestions = await unassignedQuestionsQuery
         const unassignedQuestionsCount = unassignedQuestions?.length
 
