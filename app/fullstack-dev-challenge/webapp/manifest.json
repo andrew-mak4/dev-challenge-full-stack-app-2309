@@ -84,7 +84,6 @@
       "css": []
     },
     "routing": {
-      "config": {},
       "routes": [
         {
           "pattern": ":?query:",
@@ -117,7 +116,8 @@
                     "route": "TestsObjectPage"
                   }
                 }
-              }
+              },
+              "initialLoad": "Enabled"
             }
           }
         },
@@ -133,6 +133,19 @@
                 "questions": {
                   "detail": {
                     "route": "QuestionsObjectPage"
+                  }
+                }
+              },
+              "content": {
+                "header": {
+                  "actions": {
+                    "actions": {
+                      "press": "fullstackdevchallenge.ext.actions.actions.assignQuestionsToTest",
+                      "visible": true,
+                      "enabled": true,
+                      "requiresSelection": false,
+                      "text": "Add Questions"
+                    }
                   }
                 }
               }

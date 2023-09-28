@@ -1,0 +1,34 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    core:require="{handler: 'fullstackdevchallenge/ext/actions/actions'}">
+    <Dialog id="QuestionsCountDialog"
+        title="Questions count Dialog"
+        beforeClose="handler.onBeforeCloseCountDialog"
+        contentWidth="320px">
+        <VBox id="questionsCountContainer"
+            class="sapUiSmallMargin">
+            <Label id="questionsCountLabel"
+                showColon="true"
+                labelFor="questionsCountInput"
+                text="Questions to assign to the test" />
+            <Input id="questionsCountInput"
+                type="Number"
+                placeholder="Enter Count"/>
+        </VBox>
+
+
+        <buttons>
+            <Button id="buttonClose"
+                text="Close"
+                type="Reject"
+                class="sapUiLargeMarginTopBottom"
+                press="handler.onCloseCountDialog"/>
+            <Button id="buttonSubmit"
+                type="Accept"
+                text="Submit"
+                class="sapUiLargeMarginTopBottom"
+                press="handler.onSubmitCountDialog"/>
+
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>
